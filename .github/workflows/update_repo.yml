@@ -30,7 +30,8 @@ jobs:
         d=`date +%Y%m%d`
         echo $d
         ls -latr
-        git add node_modules
+        git config --global user.name 'gormanau'
+        git config --global user.email 'gormanau@users.noreply.github.com'
         cd node_modules
         git add -A
         git commit -m "build no: $d"
