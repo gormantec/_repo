@@ -31,7 +31,10 @@ jobs:
       run: |
         d=`date +%Y%m%d`
         echo $d
+        ls -latr
+        git add node_modules
         cd node_modules
         git add -A
         git commit -m "build no: $d"
         git push
+        echo "done"
