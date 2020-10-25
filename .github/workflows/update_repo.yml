@@ -25,3 +25,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+        # Runs a set of commands using the runners shell
+    - name: End script
+      if: ${{ env.APPNAME != null }}
+      run: |
+        d=`date +%Y%m%d`
+        echo $d
+        cd node_modules
+        git add -A
+        git commit -m "build no: $d"
+        git push
